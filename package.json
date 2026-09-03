@@ -1,0 +1,12 @@
+{
+  "name": "prod-proxy",
+  "version": "1.0.0",
+  "description": "Proxy worker nodejs",
+  "main": "workers.js",
+  "dependencies": {
+    "http-proxy": "^1.18.1"
+  },
+  "scripts": {
+    "start": "node workers.js"
+  }
+}
