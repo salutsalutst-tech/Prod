@@ -1,0 +1,14 @@
+applications:
+    monapp:
+        type: nodejs:20
+        build:
+            flavor: none
+        dependencies:
+            nodejs:
+                npm: ~
+        commands:
+            start: node workers.js
+        web:
+            locations:
+                '/':
+                    passthru: true
