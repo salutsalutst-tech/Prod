@@ -1,14 +1,16 @@
 applications:
-    monapp:
-        type: nodejs:20
-        build:
-            flavor: none
-        dependencies:
-            nodejs:
-                npm: ~
-        commands:
-            start: node workers.js
-        web:
-            locations:
-                '/':
-                    passthru: true
+  myapp:
+    type: 'nodejs:22'
+    hooks:
+      build: 'npm install'
+    web:
+      commands:
+        start: 'node workers.js'
+
+routes:
+  'https://{default}/':
+    type: upstream
+    upstream: 'myapp:http'
+    # Désactive le buffering d'Upsun pour autoriser les WebSockets
+    cache:
+      enabled: false
