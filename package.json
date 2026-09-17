@@ -1,0 +1,11 @@
+{
+  "name": "moov-proxy",
+  "version": "1.0.0",
+  "main": "workers.js",
+  "scripts": {
+    "start": "node workers.js"
+  },
+  "dependencies": {
+    "http-proxy": "^1.18.1"
+  }
+}
